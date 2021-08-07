@@ -12,6 +12,7 @@ class Card extends React.Component {
 			showMsg: false,
 			voteNow: "btn btn-outline-secondary rounded-0 disabled",
 			voted: false,
+			voteAgain: false,
 			message: "Last updated: {this.props.lastUpdated} in {this.props.category}"
 		}
 	}	
@@ -24,16 +25,12 @@ class Card extends React.Component {
 		// alert("VOTO EN CONTRA")
 }
 
-thankYou = () => {
-	return <div>GRACIAS</div>
-}
 
 // change the state of eyebrow voted
 changeEyebrow = () => {
 	if(!this.state.voted) {
 		this.setState({voted: true});
-		this.setState({message: "Thank you for your vote!"});
-		this.thankYou();
+		this.setState({voteAgain: true});
 	} 
 }
 
@@ -47,7 +44,7 @@ changeEyebrow = () => {
 				<h5 className="card-title person__name">{this.props.name}</h5>
 				<p className="card-text description">{this.props.description}</p>
 
-				<Eyebrow textState={this.state.voted} lastUpdated={lastUp} category={cate}/>
+				<Eyebrow votedState={this.state.voted} voteAgainSt={this.state.voteAgain} lastUpdated={lastUp} category={cate}/>
 				<div className="vote_buttons">
 						<button onClick={this.enableVoteP} className="icon-button btn-outline-secondary" aria-label="thumbs up" id="upBtn">
 							<img src={thumbsUp} alt="thumbs up"/>
