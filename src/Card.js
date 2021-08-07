@@ -1,7 +1,7 @@
 import React from 'react'
 import thumbsUp from './assets/img/thumbs-up.svg';
 import thumbsDown from './assets/img/thumbs-down.svg';
-
+import Eyebrow from './Eyebrow';
 
 class Card extends React.Component {
 	constructor(props) {
@@ -11,10 +11,10 @@ class Card extends React.Component {
 			negatClick: false,
 			showMsg: false,
 			voteNow: "btn btn-outline-secondary rounded-0 disabled",
-			voted: false
+			voted: false,
+			message: "Last updated: {this.props.lastUpdated} in {this.props.category}"
 		}
-	}
-	
+	}	
 
 	enableVoteP =() => {
 			// alert("VOTO FAVOR")
@@ -24,15 +24,30 @@ class Card extends React.Component {
 		// alert("VOTO EN CONTRA")
 }
 
-  
+thankYou = () => {
+	return <div>GRACIAS</div>
+}
+
+// change the state of eyebrow voted
+changeEyebrow = () => {
+	if(!this.state.voted) {
+		this.setState({voted: true});
+		this.setState({message: "Thank you for your vote!"});
+		this.thankYou();
+	} 
+}
+
 	render() {
+		const lastUp = this.props.lastUpdated;
+		const cate = this.props.category;
 		return (
 			<div className="card my-card" style={{width: "18rem"}}>
 				<div className="card-body kanye_card">
 				<img src={this.props.picture} alt="im" className="card-img-top" />
 				<h5 className="card-title person__name">{this.props.name}</h5>
-				<p className="card-text description">{this.props.description}</p>				
-				<p className="card-text department">Last updated: {this.props.lastUpdated} in {this.props.category}</p>
+				<p className="card-text description">{this.props.description}</p>
+
+				<Eyebrow textState={this.state.voted} lastUpdated={lastUp} category={cate}/>
 				<div className="vote_buttons">
 						<button onClick={this.enableVoteP} className="icon-button btn-outline-secondary" aria-label="thumbs up" id="upBtn">
 							<img src={thumbsUp} alt="thumbs up"/>
@@ -41,7 +56,7 @@ class Card extends React.Component {
 						{/* <img src="assets/img/thumbs-down.svg" alt="thumbs down"/> */}
 						<img src={thumbsDown} alt="thumbs down"/>
 					</button>
-					<button className={this.state.voteNow}>
+					<button onClick={this.changeEyebrow} className={this.state.voteNow}>
 						Vote Now
 					</button>
 				</div>
