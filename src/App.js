@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Header from './Header';
-import Card from './Card';
+import Cards from './Cards';
 import Footer from'./Footer';
 
 
@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Card />
+        <Cards />
         <Footer />
         
         {/* <h1>HOLA HOLA</h1>
