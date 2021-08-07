@@ -20,7 +20,15 @@ function Cards() {
         {
           dataArr.data.map((cardObj, index) => (
             <div className="col-md-4" key={index}>
-          <Card name={cardObj.name} description={cardObj.description} image={"./assets/img/mark.png"} lastUpdated={cardObj.lastUpdated} category={cardObj.category}/>
+          <Card 
+            name={cardObj.name}
+            description={cardObj.description}
+            image={"./assets/img/mark.png"}
+            lastUpdated={cardObj.lastUpdated}
+            category={cardObj.category}
+            positives={cardObj.votes.positive}
+            negatives={cardObj.votes.negative}
+          />
         </div>
           ))
         }

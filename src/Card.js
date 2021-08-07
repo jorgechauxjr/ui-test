@@ -3,7 +3,7 @@ import thumbsUp from './assets/img/thumbs-up.svg';
 import thumbsDown from './assets/img/thumbs-down.svg';
 
 
-function Card({name, description, picture, lastUpdated, category}) {
+function Card({name, description, picture, lastUpdated, category, positives, negatives}) {
   
   return (
     <div className="card" style={{width: "18rem"}}>
@@ -25,9 +25,9 @@ function Card({name, description, picture, lastUpdated, category}) {
 				</button>
 			</div>
 			<br />
-			<div className="progress">
-				<div className="progress-bar bg-success" role="progressbar" style={{width: "74.5%"}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">74.5%</div>
-				<div className="progress-bar bg-warning" role="progressbar" style={{width: "25.5%"}} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">25.5%</div>
+			<div className="progress"> 
+				<div className="progress-bar bg-success" role="progressbar" style={{width: positives+"%"}} aria-valuenow={positives} aria-valuemin="0" aria-valuemax={positives}>{positives}</div>
+				<div className="progress-bar bg-warning" role="progressbar" style={{width: negatives+"%"}} aria-valuenow={negatives} aria-valuemin="0" aria-valuemax={negatives}>{negatives}</div>
 			</div>
 		</div>
 	</div>
