@@ -23,7 +23,13 @@ class Eyebrow extends React.Component {
       // Gracias por su voto y habilitar opcion votar de nuevo
       return <p className="card-text department">Thank you for your vote!</p>
       
-    } /*else {
+    } 
+    return (
+      <p className="card-text department">Last updated: {this.props.lastUpdated} in {this.props.category}</p>
+    )
+    
+    
+    /*else {
       console.log("voted==", voted);
       console.log("voteAgain==", voteAgain);
       return (

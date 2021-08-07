@@ -9,29 +9,32 @@ class Card extends React.Component {
 		this.state = {
 			positClick: false,
 			negatClick: false,
-			showMsg: false,
 			voteNow: "btn btn-outline-secondary rounded-0 disabled",
 			voted: false,
 			voteAgain: false,
-			message: "Last updated: {this.props.lastUpdated} in {this.props.category}"
+			voteMsg: "Vote Now"
 		}
 	}	
-
+	// Positive vote
 	enableVoteP =() => {
-			// alert("VOTO FAVOR")
 			this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
 	}
-	enableVoteN() {
-		// alert("VOTO EN CONTRA")
-}
 
+	// Negative vote
+	enableVoteN = () => {
+		this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
+}
 
 // change the state of eyebrow voted
 changeEyebrow = () => {
 	if(!this.state.voted) {
 		this.setState({voted: true});
 		this.setState({voteAgain: true});
-	} 
+		this.setState({voteMsg: "Vote aAgain"});
+	} else if (this.state.voteAgain) {
+		this.setState({voteAgain: false});
+		this.setState({voteMsg: "Vote Now"});
+	}
 }
 
 	render() {
@@ -53,8 +56,9 @@ changeEyebrow = () => {
 						{/* <img src="assets/img/thumbs-down.svg" alt="thumbs down"/> */}
 						<img src={thumbsDown} alt="thumbs down"/>
 					</button>
+					
 					<button onClick={this.changeEyebrow} className={this.state.voteNow}>
-						Vote Now
+						{this.state.voteMsg}
 					</button>
 				</div>
 				<br />
