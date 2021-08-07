@@ -6,21 +6,21 @@ import thumbsDown from './assets/img/thumbs-down.svg';
 function Card({name, description, picture, lastUpdated, category, positives, negatives}) {
   
   return (
-    <div className="card" style={{width: "18rem"}}>
+    <div className="card my-card" style={{width: "18rem"}}>
 			<div className="card-body kanye_card">
 			<img src={picture} alt="im" className="card-img-top" />
 			<h5 className="card-title person__name">{name}</h5>
 			<p className="card-text description">{description}</p>
 			<p className="card-text department">Last updated: {lastUpdated} in {category}</p>
 			<div className="vote_buttons">
-					<button className="icon-button" aria-label="thumbs up">
+					<button className="icon-button btn-outline-secondary" aria-label="thumbs up">
 						<img src={thumbsUp} alt="thumbs up"/>
 				</button>
-				<button className="icon-button" aria-label="thumbs down">
+				<button className="icon-button btn-outline-secondary" aria-label="thumbs down">
 					{/* <img src="assets/img/thumbs-down.svg" alt="thumbs down"/> */}
 					<img src={thumbsDown} alt="thumbs down"/>
 				</button>
-				<button className="btn btn-secondary">
+				<button className="btn btn-outline-secondary rounded-0 disabled">
 					Vote Now
 				</button>
 			</div>
