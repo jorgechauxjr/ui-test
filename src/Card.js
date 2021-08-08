@@ -2,6 +2,7 @@ import React from 'react'
 import thumbsUp from './assets/img/thumbs-up.svg';
 import thumbsDown from './assets/img/thumbs-down.svg';
 import Eyebrow from './Eyebrow';
+import Bar from './Bar';
 
 class Card extends React.Component {
 	constructor(props) {
@@ -12,29 +13,50 @@ class Card extends React.Component {
 			voteNow: "btn btn-outline-secondary rounded-0 disabled",
 			voted: false,
 			voteAgain: false,
-			voteMsg: "Vote Now"
+			voteMsg: "Vote Now",
+			positVotes: this.props.positives,
+			negVotes: this.props.negatives
 		}
 	}	
 	// Positive vote
 	enableVoteP =() => {
-			this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
+		this.setState({positClick: true})
+		this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
+		console.log("pos==", this.state.positVotes);
 	}
 
 	// Negative vote
 	enableVoteN = () => {
-		this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
+		this.setState({negatClick: true})
+		this.setState({voteNow: "btn btn-outline-secondary rounded-0"});
+		
+		console.log("NEG==", this.state.negVotes);
 }
 
 // change the state of eyebrow voted
 changeEyebrow = () => {
+	
+	if (this.state.positClick) {
+		this.setState({positVotes: this.state.positVotes + 1});
+		this.setState({positClick: false})
+
+	} else {
+		this.setState({negVotes: this.state.negVotes + 1});
+		this.setState({negatClick: false})
+	}
+
+
 	if(!this.state.voted) {
 		this.setState({voted: true});
-		this.setState({voteAgain: true});
 		this.setState({voteMsg: "Vote aAgain"});
-	} else if (this.state.voteAgain) {
-		this.setState({voteAgain: false});
+	} else {
+		this.setState({voted: false});
+		this.setState({voteNow: "btn btn-outline-secondary rounded-0 disabled"});
 		this.setState({voteMsg: "Vote Now"});
 	}
+
+	
+	
 }
 
 	render() {
@@ -62,10 +84,7 @@ changeEyebrow = () => {
 					</button>
 				</div>
 				<br />
-				<div className="progress"> 
-					<div className="progress-bar bg-success" role="progressbar" style={{width: this.props.positives+"%"}} aria-valuenow={this.props.positives} aria-valuemin="0" aria-valuemax={this.props.positives}>{this.props.positives}</div>
-					<div className="progress-bar bg-warning" role="progressbar" style={{width: this.props.negatives+"%"}} aria-valuenow={this.props.negatives} aria-valuemin="0" aria-valuemax={this.props.negatives}>{this.props.negatives}</div>
-				</div>
+				<Bar totalPositives={this.state.positVotes} totalNegatives={this.state.negVotes}/>
 			</div>
 		</div>
 		)

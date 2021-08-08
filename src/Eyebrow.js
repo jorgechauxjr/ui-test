@@ -15,11 +15,11 @@ class Eyebrow extends React.Component {
   render() {
     const voted = this.props.votedState;
     const voteAgain = this.props.voteAgainSt;
-    if((!voted) && (!voteAgain)) {
+    if((!voted)) {
       return (
         <p className="card-text department">Last updated: {this.props.lastUpdated} in {this.props.category}</p>
       )
-    } else if ((voted) && (voteAgain)) {
+    } else if ((voted)) {
       // Gracias por su voto y habilitar opcion votar de nuevo
       return <p className="card-text department">Thank you for your vote!</p>
       
