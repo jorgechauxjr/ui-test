@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import dataArr from './assets/data.json'
+import cardImg from './assets/img/mark.png';
 // import mark from './assets/img/mark.png'
 // import image2 from './assets/img/mark.png'
 // import image3 from './assets/img/mark.png'
@@ -15,6 +16,7 @@ console.log(imagesArr)
 function Cards() {
   
   return (
+    
     <div className="container d-flex h-100 align-items-center">
       <div className="row">
         {
@@ -23,7 +25,7 @@ function Cards() {
           <Card 
             name={cardObj.name}
             description={cardObj.description}
-            image={"./assets/img/mark.png"}
+            cImage={cardImg}
             lastUpdated={cardObj.lastUpdated}
             category={cardObj.category}
             positives={cardObj.votes.positive}

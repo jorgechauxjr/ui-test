@@ -4,6 +4,7 @@ import thumbsDown from './assets/img/thumbs-down.svg';
 import Eyebrow from './Eyebrow';
 import Bar from './Bar';
 
+
 class Card extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,25 +13,22 @@ class Card extends React.Component {
 			negatClick: false,
 			voteNow: "btn btn-outline-secondary rounded-0 disabled",
 			voted: false,
-			voteAgain: false,
 			voteMsg: "Vote Now",
 			positVotes: this.props.positives,
 			negVotes: this.props.negatives
 		}
 	}	
+	
 	// Positive vote
 	enableVoteP =() => {
 		this.setState({positClick: true})
 		this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
-		console.log("pos==", this.state.positVotes);
 	}
 
 	// Negative vote
 	enableVoteN = () => {
 		this.setState({negatClick: true})
 		this.setState({voteNow: "btn btn-outline-secondary rounded-0"});
-		
-		console.log("NEG==", this.state.negVotes);
 }
 
 // change the state of eyebrow voted
@@ -53,10 +51,7 @@ changeEyebrow = () => {
 		this.setState({voted: false});
 		this.setState({voteNow: "btn btn-outline-secondary rounded-0 disabled"});
 		this.setState({voteMsg: "Vote Now"});
-	}
-
-	
-	
+	}	
 }
 
 	render() {
@@ -64,10 +59,10 @@ changeEyebrow = () => {
 		const cate = this.props.category;
 		return (
 			<div className="card my-card" style={{width: "18rem"}}>
-				<div className="card-body kanye_card">
-				<img src={this.props.picture} alt="im" className="card-img-top" />
+				<div className="card-body">
+				<img src={this.props.cImage} alt="im" className="card-img-top" />
 				<h5 className="card-title person__name">{this.props.name}</h5>
-				<p className="card-text description">{this.props.description}</p>
+				<p className="card-text person__desc">{this.props.description}</p>
 
 				<Eyebrow votedState={this.state.voted} voteAgainSt={this.state.voteAgain} lastUpdated={lastUp} category={cate}/>
 				<div className="vote_buttons">
@@ -75,7 +70,6 @@ changeEyebrow = () => {
 							<img src={thumbsUp} alt="thumbs up"/>
 					</button>
 					<button onClick={this.enableVoteN} className="icon-button btn-outline-secondary" aria-label="thumbs down" id="downBtn">
-						{/* <img src="assets/img/thumbs-down.svg" alt="thumbs down"/> */}
 						<img src={thumbsDown} alt="thumbs down"/>
 					</button>
 					

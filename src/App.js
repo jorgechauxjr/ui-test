@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
 import Header from './Header';
-// import Body from './Body'
+import Aside from './Aside'
+import Body from './Body';
 import Cards from './Cards';
 import Footer from'./Footer';
 
@@ -11,12 +12,10 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        {/* <Body /> */}
+        <Aside />
+        <Body />
         <Cards />
         <Footer />
-        
-        {/* <h1>HOLA HOLA</h1>
-        <img src="../assets/greta.png" /> */}
       </React.Fragment>
       
     );

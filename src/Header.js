@@ -2,7 +2,7 @@ import React from 'react';
 import thumbsUp from './assets/img/thumbs-up.svg';
 import thumbsDown from './assets/img/thumbs-down.svg';
 import searchI from './assets/img/search.svg';
-import popeImg from './assets/img/pope-francis.png';
+import pope from './assets/img/pope-francis.@2x.png';
 
 class Header extends React.Component {
   render () {
@@ -38,11 +38,14 @@ class Header extends React.Component {
         <header className="hero">
 			<img
 				className="hero__background"
-				srcSet="../assets/img/pope-francis.png 750w, assets/img/pope-francis.@2x.png 1440w"
+				srcSet={pope
+			}
 				sizes="(min-width: 750px) 1440px, 100vw"
-				src={popeImg}
+				src={pope
+			}
 				// src="http://localhost:3000/src/assets/img/pope-francis.png"
 				alt="Pope Francis" />
+				
 			<div className="max-centered">
 				<div className="hero__featured-card">
 					<div className="featured-card__glass-background"></div>
