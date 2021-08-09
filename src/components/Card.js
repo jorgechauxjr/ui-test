@@ -56,28 +56,28 @@ changes = () => {
 		const cate = this.props.category;
 		return (
 			<div className="card" style={{width: "18rem"}}>
-				<div className="card-body card__col">
-				<img src={this.props.cImage} alt="im" className="card-img-top" />
-				<h5 className="card-title person__name">{this.props.name}</h5>
-				<p className="card-text person__desc">{this.props.description}</p>
+				<div className="card-body card__col ">
+					<img src={this.props.cImage} alt="im" className="card-img-top" />
+					<h5 className="card-title person__name">{this.props.name}</h5>
+					<p className="card-text person__desc">{this.props.description}</p>
 
-				<Eyebrow votedState={this.state.voted} voteAgainSt={this.state.voteAgain} lastUpdated={lastUp} category={cate}/>
-				<div className="vote_buttons">
+					<Eyebrow votedState={this.state.voted} voteAgainSt={this.state.voteAgain} lastUpdated={lastUp} category={cate}/>
+					<div className="vote_buttons">
 						<button onClick={this.enableVoteP} className="icon-button btn-outline-secondary" aria-label="thumbs up">
-							<img src={thumbsUp} alt="thumbs up"/>
-					</button>
-					<button onClick={this.enableVoteN} className="icon-button btn-outline-secondary" aria-label="thumbs down">
-						<img src={thumbsDown} alt="thumbs down"/>
-					</button>
+							<img src={thumbsUp} alt="thumbs up" className="button"/>
+						</button>
+						<button onClick={this.enableVoteN} className="icon-button btn-outline-secondary" aria-label="thumbs down">
+							<img src={thumbsDown} alt="thumbs down" className="button"/>
+						</button>
 					
-					<button onClick={this.changes} className={this.state.voteNow}>
-						{this.state.voteMsg}
-					</button>
+						<button onClick={this.changes} className={this.state.voteNow + " vote-now"}>
+							{this.state.voteMsg}
+						</button>
+					</div>
+					<br />
+					<Bar totalPositives={this.state.positVotes} totalNegatives={this.state.negVotes}/>
 				</div>
-				<br />
-				<Bar totalPositives={this.state.positVotes} totalNegatives={this.state.negVotes}/>
 			</div>
-		</div>
 		)
 	}
 }
