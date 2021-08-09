@@ -17,3 +17,6 @@ cd ui-test
 npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Preview
+
+![](https://github.com/jorgechauxjr/ui-test/blob/master/preview.png?raw=true)
