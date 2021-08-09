@@ -1,6 +1,6 @@
-import React from 'react'
-import Card from './Card'
-import dataArr from '../assets/data.json'
+import React from 'react';
+import Card from './Card';
+import dataArr from '../assets/data.json';
 import im1 from '../assets/img/kanye.png';
 import im2 from '../assets/img/mark.png';
 import im3 from '../assets/img/cristina.png';
@@ -36,4 +36,3 @@ function Cards() {
 }
 
 export default Cards
-

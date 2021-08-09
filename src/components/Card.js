@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import thumbsUp from '../assets/img/thumbs-up.svg';
 import thumbsDown from '../assets/img/thumbs-down.svg';
 import Eyebrow from './Eyebrow';

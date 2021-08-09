@@ -1,5 +1,5 @@
-import React from 'react'
-import './eyebrow.css'
+import React from 'react';
+import './eyebrow.css';
 
 class Eyebrow extends React.Component {
 
