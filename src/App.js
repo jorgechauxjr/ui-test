@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import Aside from './Aside'
-import Body from './Body';
-import Cards from './Cards';
-import Footer from'./Footer';
+import Header from './components/Header';
+import Aside from './components/Aside'
+import Body from './components/Body';
+import Cards from './components/Cards';
+import Footer from'./components/Footer';
 
 class App extends React.Component {
   render () {

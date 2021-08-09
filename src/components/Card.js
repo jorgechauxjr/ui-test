@@ -1,8 +1,9 @@
 import React from 'react'
-import thumbsUp from './assets/img/thumbs-up.svg';
-import thumbsDown from './assets/img/thumbs-down.svg';
+import thumbsUp from '../assets/img/thumbs-up.svg';
+import thumbsDown from '../assets/img/thumbs-down.svg';
 import Eyebrow from './Eyebrow';
 import Bar from './Bar';
+import './card.css';
 
 
 class Card extends React.Component {
@@ -54,18 +55,18 @@ changes = () => {
 		const lastUp = this.props.lastUpdated;
 		const cate = this.props.category;
 		return (
-			<div className="card my-card" style={{width: "18rem"}}>
-				<div className="card-body">
+			<div className="card" style={{width: "18rem"}}>
+				<div className="card-body card__col">
 				<img src={this.props.cImage} alt="im" className="card-img-top" />
 				<h5 className="card-title person__name">{this.props.name}</h5>
 				<p className="card-text person__desc">{this.props.description}</p>
 
 				<Eyebrow votedState={this.state.voted} voteAgainSt={this.state.voteAgain} lastUpdated={lastUp} category={cate}/>
 				<div className="vote_buttons">
-						<button onClick={this.enableVoteP} className="icon-button btn-outline-secondary" aria-label="thumbs up" id="upBtn">
+						<button onClick={this.enableVoteP} className="icon-button btn-outline-secondary" aria-label="thumbs up">
 							<img src={thumbsUp} alt="thumbs up"/>
 					</button>
-					<button onClick={this.enableVoteN} className="icon-button btn-outline-secondary" aria-label="thumbs down" id="downBtn">
+					<button onClick={this.enableVoteN} className="icon-button btn-outline-secondary" aria-label="thumbs down">
 						<img src={thumbsDown} alt="thumbs down"/>
 					</button>
 					

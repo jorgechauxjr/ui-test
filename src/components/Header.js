@@ -1,8 +1,8 @@
 import React from 'react';
-import thumbsUp from './assets/img/thumbs-up.svg';
-import thumbsDown from './assets/img/thumbs-down.svg';
-import searchI from './assets/img/search.svg';
-import pope from './assets/img/pope-francis.@2x.png';
+import thumbsUp from '../assets/img/thumbs-up.svg';
+import thumbsDown from '../assets/img/thumbs-down.svg';
+import searchI from '../assets/img/search.svg';
+import pope from '../assets/img/pope-francis.@2x.png';
 
 class Header extends React.Component {
   render () {

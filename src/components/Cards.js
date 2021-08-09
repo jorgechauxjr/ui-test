@@ -1,19 +1,15 @@
 import React from 'react'
 import Card from './Card'
-import dataArr from './assets/data.json'
-import cardImg from './assets/img/mark.png';
-// import mark from './assets/img/mark.png'
-// import image2 from './assets/img/mark.png'
-// import image3 from './assets/img/mark.png'
-/*
-const imagesArr = dataArr.data.map((cardObj) => {
-  cardObj.picture = "./assets/img/" + cardObj.picture
-  return cardObj.picture
-})
-console.log(imagesArr)
-*/
+import dataArr from '../assets/data.json'
+import im1 from '../assets/img/kanye.png';
+import im2 from '../assets/img/mark.png';
+import im3 from '../assets/img/cristina.png';
+import im4 from '../assets/img/malala.png';
+import im5 from '../assets/img/elon.png';
+import im6 from '../assets/img/greta.png';
 
 function Cards() {
+  const images = [im1, im2, im3, im4, im5, im6];
   
   return (
     
@@ -25,7 +21,7 @@ function Cards() {
           <Card 
             name={cardObj.name}
             description={cardObj.description}
-            cImage={cardImg}
+            cImage={images[index]}
             lastUpdated={cardObj.lastUpdated}
             category={cardObj.category}
             positives={cardObj.votes.positive}
@@ -35,7 +31,6 @@ function Cards() {
           ))
         }
       </div>
-      
     </div>
   )
 }

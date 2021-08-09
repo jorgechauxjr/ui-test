@@ -1,0 +1,33 @@
+
+.ruling {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.person__name {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.person__desc {
+  text-align: justify;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.vote_buttons, .department {
+  text-align: right;
+  
+}
+
+.card__col {
+  background-color: rgba(0, 0, 0, .1);
+}
