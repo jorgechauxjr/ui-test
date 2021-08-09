@@ -1,11 +1,9 @@
-import './App.css';
 import React from 'react';
 import Header from './Header';
 import Aside from './Aside'
 import Body from './Body';
 import Cards from './Cards';
 import Footer from'./Footer';
-
 
 class App extends React.Component {
   render () {
@@ -17,7 +15,6 @@ class App extends React.Component {
         <Cards />
         <Footer />
       </React.Fragment>
-      
     );
   }
 }

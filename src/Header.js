@@ -36,16 +36,7 @@ class Header extends React.Component {
           	</div>
         </nav>
         <header className="hero">
-			<img
-				className="hero__background"
-				srcSet={pope
-			}
-				sizes="(min-width: 750px) 1440px, 100vw"
-				src={pope
-			}
-				// src="http://localhost:3000/src/assets/img/pope-francis.png"
-				alt="Pope Francis" />
-				
+			<img className="hero__background" srcSet={pope} sizes="(min-width: 750px) 1440px, 100vw" src={pope} alt="Pope Francis" />
 			<div className="max-centered">
 				<div className="hero__featured-card">
 					<div className="featured-card__glass-background"></div>

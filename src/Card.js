@@ -19,20 +19,17 @@ class Card extends React.Component {
 		}
 	}	
 	
-	// Positive vote
 	enableVoteP =() => {
 		this.setState({positClick: true})
 		this.setState({voteNow: "btn btn-outline-secondary rounded-0"})
 	}
 
-	// Negative vote
 	enableVoteN = () => {
 		this.setState({negatClick: true})
 		this.setState({voteNow: "btn btn-outline-secondary rounded-0"});
 }
 
-// change the state of eyebrow voted
-changeEyebrow = () => {
+changes = () => {
 	
 	if (this.state.positClick) {
 		this.setState({positVotes: this.state.positVotes + 1});
@@ -42,7 +39,6 @@ changeEyebrow = () => {
 		this.setState({negVotes: this.state.negVotes + 1});
 		this.setState({negatClick: false})
 	}
-
 
 	if(!this.state.voted) {
 		this.setState({voted: true});
@@ -73,7 +69,7 @@ changeEyebrow = () => {
 						<img src={thumbsDown} alt="thumbs down"/>
 					</button>
 					
-					<button onClick={this.changeEyebrow} className={this.state.voteNow}>
+					<button onClick={this.changes} className={this.state.voteNow}>
 						{this.state.voteMsg}
 					</button>
 				</div>
@@ -83,8 +79,6 @@ changeEyebrow = () => {
 		</div>
 		)
 	}
-  
 }
-
 
 export default Card
